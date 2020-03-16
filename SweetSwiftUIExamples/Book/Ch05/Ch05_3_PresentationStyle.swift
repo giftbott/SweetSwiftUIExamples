@@ -14,7 +14,7 @@ struct Ch05_3_PresentationStyle: View {
   }
 }
 
-extension Ch05_3_PresentationStyle {
+private extension Ch05_3_PresentationStyle {
   // MARK: Example 01
   
   /// presentationMode를 이용한 dismiss 예시
@@ -30,19 +30,19 @@ extension Ch05_3_PresentationStyle {
              onDismiss: { print("Dismissed")},
              content: { PresentedView() })
     }
+  }
+  
+  struct PresentedView: View {
+    @Environment (\.presentationMode) var presentationMode
     
-    struct PresentedView: View {
-      @Environment (\.presentationMode) var presentationMode
-      
-      var body: some View {
-        Button(action: {
-          if self.presentationMode.wrappedValue.isPresented {
-            self.presentationMode.wrappedValue.dismiss()
-          }
-        }) {
-          Text("Tap to Dismiss")
-            .font(.title).foregroundColor(.red)
+    var body: some View {
+      Button(action: {
+        if self.presentationMode.wrappedValue.isPresented {
+          self.presentationMode.wrappedValue.dismiss()
         }
+      }) {
+        Text("Tap to Dismiss")
+          .font(.title).foregroundColor(.red)
       }
     }
   }
@@ -62,15 +62,15 @@ extension Ch05_3_PresentationStyle {
              onDismiss: { print("Dismissed")},
              content: { PresentedViewWithBinding(isPresented: self.$showingSheet) })
     }
+  }
+  
+  struct PresentedViewWithBinding: View {
+    @Binding var isPresented: Bool
     
-    struct PresentedViewWithBinding: View {
-      @Binding var isPresented: Bool
-      
-      var body: some View {
-        Button(action: { self.isPresented.toggle() }) {
-          Text("Tap to Dismiss")
-            .font(.title).foregroundColor(.red)
-        }
+    var body: some View {
+      Button(action: { self.isPresented.toggle() }) {
+        Text("Tap to Dismiss")
+          .font(.title).foregroundColor(.red)
       }
     }
   }
@@ -95,7 +95,7 @@ extension Ch05_3_PresentationStyle {
                content: popoverContents)
     }
     
-    func popoverContents() -> some View {
+    private func popoverContents() -> some View {
       VStack(alignment: .leading) {
         HStack {
           Button(action: { self.showingPopover = false }) {
@@ -122,7 +122,7 @@ extension Ch05_3_PresentationStyle {
 
 // MARK: - Previews
 
-struct Ch05_3_PresentationStyle_Previews1: PreviewProvider {
+struct Ch05_3_PresentationStyle_Previews: PreviewProvider {
   static var previews: some View {
     Ch05_3_PresentationStyle()
       .previewDisplayName("Sweet SwiftUI")

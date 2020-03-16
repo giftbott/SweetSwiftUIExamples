@@ -10,20 +10,22 @@ import SwiftUI
 
 struct Ch06_1_ViewModifier: View {
   var body: some View {
-    example01
+    Example01()
   }
 }
 
-extension Ch06_1_ViewModifier {
+private extension Ch06_1_ViewModifier {
   // MARK: Example 01
   
   /// modifier 수식어 또는 ModifiedContent 뷰를 이용해 ViewModifier를 적용할 수 있습니다.
-  var example01: some View {
-    Text("Custom ViewModifier")
-      .modifier(CustomViewModifier(borderColor: .blue))
-    
-//    ModifiedContent(content: Text("Custom ViewModifier"),
-//                    modifier: CustomViewModifier(borderColor: .blue))
+  struct Example01: View {
+    var body: some View {
+      Text("Custom ViewModifier")
+        .modifier(CustomViewModifier(borderColor: .blue))
+      
+//      ModifiedContent(content: Text("Custom ViewModifier"),
+//                      modifier: CustomViewModifier(borderColor: .blue))
+    }
   }
   
   struct CustomViewModifier: ViewModifier {
@@ -42,21 +44,23 @@ extension Ch06_1_ViewModifier {
   // MARK: Example 02
   
   /// concat을 이용해 서로 다른 ViewModifier를 결합하여 사용할 수도 있습니다.
-  var example02: some View {
-    Text("My ViewModifiers")
-      .modifier(MyModifier1().concat(MyModifier2()))
-  }
-  
-  struct MyModifier1: ViewModifier {
-    func body(content: Content) -> some View {
-      content
-        .font(.title)
+  struct Example02: View {
+    var body: some View {
+      Text("My ViewModifiers")
+        .modifier(MyModifier1().concat(MyModifier2()))
     }
-  }
-  struct MyModifier2: ViewModifier {
-    func body(content: Content) -> some View {
-      content
-        .foregroundColor(.blue)
+    
+    struct MyModifier1: ViewModifier {
+      func body(content: Content) -> some View {
+        content
+          .font(.title)
+      }
+    }
+    struct MyModifier2: ViewModifier {
+      func body(content: Content) -> some View {
+        content
+          .foregroundColor(.blue)
+      }
     }
   }
   
@@ -64,15 +68,17 @@ extension Ch06_1_ViewModifier {
   
   /// View 프로토콜을 확장하여 수식어를 추가해주면
   /// ViewModifier를 좀 더 쉽게 사용할 수 있습니다.
-  var example03: some View {
-    Text("Custom ViewModifier")
-      .customModifier(borderColor: .orange)
+  struct Example03: View {
+    var body: some View {
+      Text("Custom ViewModifier")
+        .customModifier(borderColor: .orange)
+    }
   }
 }
 
 // MARK: View Extension
 
-extension View {
+fileprivate extension View {
   func customModifier(borderColor: Color = .red) -> some View {
     self
       .modifier(Ch06_1_ViewModifier.CustomViewModifier(borderColor: borderColor))
@@ -82,7 +88,7 @@ extension View {
 
 // MARK: - Previews
 
-struct Ch06_1_ViewModifier_Previews1: PreviewProvider {
+struct Ch06_1_ViewModifier_Previews: PreviewProvider {
   static var previews: some View {
     Ch06_1_ViewModifier()
       .previewDisplayName("Sweet SwiftUI")

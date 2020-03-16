@@ -14,7 +14,7 @@ struct Ch06_3_UIAppearance: View {
   }
 }
 
-extension Ch06_3_UIAppearance {
+private extension Ch06_3_UIAppearance {
   // MARK: Example 01
   
   struct Example01: View {
@@ -61,7 +61,7 @@ extension Ch06_3_UIAppearance {
 
 // MARK: - Previews
 
-struct Ch06_3_UIAppearance_Previews1: PreviewProvider {
+struct Ch06_3_UIAppearance_Previews: PreviewProvider {
   static var previews: some View {
     Ch06_3_UIAppearance()
       .previewDisplayName("Sweet SwiftUI")

@@ -14,7 +14,7 @@ struct Ch05_1_DataFlow: View {
   }
 }
 
-extension Ch05_1_DataFlow {
+private extension Ch05_1_DataFlow {
   // MARK: Example 01
   
   /// Toggle과 Stepper 구현 예시.
@@ -90,7 +90,7 @@ extension Ch05_1_DataFlow {
 
 // MARK: - Previews
 
-struct Ch05_1_DataFlow_Previews1: PreviewProvider {
+struct Ch05_1_DataFlow_Previews: PreviewProvider {
   static var previews: some View {
     Ch05_1_DataFlow()
       .previewDisplayName("Sweet SwiftUI")

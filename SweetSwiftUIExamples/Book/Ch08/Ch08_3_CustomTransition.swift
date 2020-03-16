@@ -14,7 +14,7 @@ struct Ch08_3_CustomTransition: View {
   }
 }
 
-extension Ch08_3_CustomTransition {
+private extension Ch08_3_CustomTransition {
   // MARK: Example 01
   
   /// 커스텀 애니메이션을 연산하는데 필요한 속성이 무엇인지 animatableData로 지정해 줍니다.
@@ -73,7 +73,7 @@ extension Ch08_3_CustomTransition {
 
 // MARK: - Previews
 
-struct Ch08_3_CustomTransition_Previews1: PreviewProvider {
+struct Ch08_3_CustomTransition_Previews: PreviewProvider {
   static var previews: some View {
     Ch08_3_CustomTransition()
       .previewDisplayName("Sweet SwiftUI")

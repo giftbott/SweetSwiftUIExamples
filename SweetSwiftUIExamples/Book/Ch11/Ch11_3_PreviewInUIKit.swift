@@ -19,7 +19,7 @@ struct Ch11_3_PreviewInUIKit: View {
 
 /// UIViewControllerRepresentable 프로토콜을 이용하면
 /// UIViewController에 대해서도 프리뷰를 활용할 수 있습니다.
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     

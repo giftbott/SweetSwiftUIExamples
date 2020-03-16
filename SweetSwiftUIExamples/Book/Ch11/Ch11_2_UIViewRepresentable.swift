@@ -15,7 +15,7 @@ struct Ch11_2_UIViewRepresentable: View {
   }
 }
 
-extension Ch11_2_UIViewRepresentable {
+private extension Ch11_2_UIViewRepresentable {
   // MARK: Example 01
   
   /// UIViewRepresentable 프로토콜을 이용한 MKMapView 활용
@@ -46,7 +46,8 @@ extension Ch11_2_UIViewRepresentable {
   }
 }
 
-struct MapView: UIViewRepresentable {
+
+fileprivate struct MapView: UIViewRepresentable {
   let coordinate: CLLocationCoordinate2D
   
   func makeUIView(context: Context) -> MKMapView {

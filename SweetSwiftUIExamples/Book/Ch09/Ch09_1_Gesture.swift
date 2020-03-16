@@ -10,29 +10,31 @@ import SwiftUI
 
 struct Ch09_1_Gesture: View {
   var body: some View {
-    example01
+    Example01()
   }
 }
 
-extension Ch09_1_Gesture {
+private extension Ch09_1_Gesture {
   // MARK: Example 01
   
   /// TapGesture는 화면을 일정 횟수(기본값 1) 이상 탭 했을 때 반응하는 제스처입니다.
-  var example01: some View {
-    let tapGesture = TapGesture(count: 2).onEnded {
-      print("Circle <3>")
+  struct Example01: View {
+    var body: some View {
+      let tapGesture = TapGesture(count: 2).onEnded {
+        print("Circle <3>")
+      }
+      
+      return VStack {
+        Circle().fill(Color.red)
+          .onTapGesture { print("Circle <1>") }
+        
+        Circle().fill(Color.green)
+          .onTapGesture(count: 2) { print("Circle <2>") }
+        
+        Circle().fill(Color.blue)
+          .gesture(tapGesture)
+      }.padding()
     }
-    
-    return VStack {
-      Circle().fill(Color.red)
-        .onTapGesture { print("Circle <1>") }
-      
-      Circle().fill(Color.green)
-        .onTapGesture(count: 2) { print("Circle <2>") }
-      
-      Circle().fill(Color.blue)
-        .gesture(tapGesture)
-    }.padding()
   }
   
   // MARK: Example 02
@@ -121,7 +123,8 @@ extension Ch09_1_Gesture {
   // MARK: Example 06
   
   /// highPriorityGesture는 제스처가 겹치는 상황에서 우선 순위를 가집니다.
-  var example06: some View {
+  struct Example06: View {
+    var body: some View {
     let tapGesture = TapGesture().onEnded {
       print("사각형 탭")
     }
@@ -134,11 +137,13 @@ extension Ch09_1_Gesture {
 //    .gesture(tapGesture)
     .highPriorityGesture(tapGesture)
   }
+    }
   
   // MARK: Example 07
   
   /// simultaneousGesture는 서로 다른 제스처를 동시에 인식되도록 합니다.
-  var example07: some View {
+  struct Example07: View {
+    var body: some View {
     let longPressGesture = LongPressGesture()
       .onChanged { _ in print("LongPress began!") }
       .onEnded { _ in print("LongPressed!") }
@@ -152,31 +157,34 @@ extension Ch09_1_Gesture {
 //      .gesture(tapGesture)
       .simultaneousGesture(tapGesture)
   }
+    }
   
   // MARK: Example 08
   
   /// GestureMask는 여러 개의 제스처가 사용되었을 때 어떤 제스처를 인식할 것인지 설정해 줄 수 있습니다.
-  var example08: some View {
-    let longPressGesture = LongPressGesture()
-      .onChanged { _ in print("LongPress began!") }
-      .onEnded { _ in print("LongPressed!") }
-    
-    let tapGesture = TapGesture().onEnded {
-      print("Tapped!")
+  struct Example08: View {
+    var body: some View {
+      let longPressGesture = LongPressGesture()
+        .onChanged { _ in print("LongPress began!") }
+        .onEnded { _ in print("LongPressed!") }
+      
+      let tapGesture = TapGesture().onEnded {
+        print("Tapped!")
+      }
+      
+      return VStack {
+        Circle()
+          .gesture(longPressGesture)
+      }
+      .simultaneousGesture(tapGesture, including: .all)
     }
-    
-    return VStack {
-      Circle()
-        .gesture(longPressGesture)
-    }
-    .simultaneousGesture(tapGesture, including: .all)
   }
 }
 
 
 // MARK: - Previews
 
-struct Ch09_1_Gesture_Previews1: PreviewProvider {
+struct Ch09_1_Gesture_Previews: PreviewProvider {
   static var previews: some View {
     Ch09_1_Gesture()
       .previewDisplayName("Sweet SwiftUI")

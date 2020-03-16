@@ -10,33 +10,37 @@ import SwiftUI
 
 struct Ch10_3_TextField: View {
   var body: some View {
-    example01
+    Example01()
   }
 }
 
-extension Ch10_3_TextField {
+private extension Ch10_3_TextField {
   // MARK: Example 01
   
   /// 텍스트 필드 사용 예시
-  var example01: some View {
-    Form {
-      TextField("플레이스 홀더", text: .constant(""))
-      TextField("플레이스 홀더", text: .constant("텍스트"))
-      
-      TextField("", text: .constant("PlainTextFieldStyle"))
-        .textFieldStyle(PlainTextFieldStyle())
-      TextField("", text: .constant("RoundedBorderTextFieldStyle"))
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+  struct Example01: View {
+    var body: some View {
+      Form {
+        TextField("플레이스 홀더", text: .constant(""))
+        TextField("플레이스 홀더", text: .constant("텍스트"))
+        
+        TextField("", text: .constant("PlainTextFieldStyle"))
+          .textFieldStyle(PlainTextFieldStyle())
+        TextField("", text: .constant("RoundedBorderTextFieldStyle"))
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+      }
     }
   }
   
   // MARK: Example 02
   
   /// bezel 또는 line 스타일 적용 예시
-  var example02: some View {
-    Form {
-      TextField("", text: .constant(".line borderStyle"))
-        .onAppear { UITextField.appearance().borderStyle = .line }
+  struct Example02: View {
+    var body: some View {
+      Form {
+        TextField("", text: .constant(".line borderStyle"))
+          .onAppear { UITextField.appearance().borderStyle = .line }
+      }
     }
   }
   
@@ -140,7 +144,7 @@ extension Ch10_3_TextField {
       }
     }
     
-    func validationImage(_ isValid: Bool) -> some View {
+    private func validationImage(_ isValid: Bool) -> some View {
       Image(systemName: isValid ? "checkmark" : "pencil")
         .foregroundColor(isValid ? Color.green : Color.primary)
         .font(Font.system(.headline))
@@ -195,7 +199,7 @@ extension Ch10_3_TextField {
 
 // MARK: - Previews
 
-struct Ch10_3_TextField_Previews1: PreviewProvider {
+struct Ch10_3_TextField_Previews: PreviewProvider {
   static var previews: some View {
     Ch10_3_TextField()
       .previewDisplayName("Sweet SwiftUI")

@@ -10,40 +10,44 @@ import SwiftUI
 
 struct Ch04_1_Preview: View {
   var body: some View {
-    example01
+    Example01()
   }
 }
 
-extension Ch04_1_Preview {
+private extension Ch04_1_Preview {
   // MARK: Example 01
   
-  var example01: some View {
-    List {
-      Image("cat")
-        .resizable()
-        .scaledToFit()
-      
-      Image("dog")
-        .resizable()
-        .scaledToFit()
+  struct Example01: View {
+    var body: some View {
+      List {
+        Image("cat")
+          .resizable()
+          .scaledToFit()
+        
+        Image("dog")
+          .resizable()
+          .scaledToFit()
+      }
     }
   }
   
   // MARK: Example 02
   
-  var example02: some View {
-    HStack {
-      Image("cat")
-        .resizable().scaledToFill()
-        .frame(width: 80, height: 80)
-        .clipped()
-      Text("Cat").font(.title)
-      
-      Image("dog")
-        .resizable().scaledToFill()
-        .frame(width: 80, height: 80)
-        .clipped()
-      Text("Dog").font(.title)
+  struct Example02: View {
+    var body: some View {
+      HStack {
+        Image("cat")
+          .resizable().scaledToFill()
+          .frame(width: 80, height: 80)
+          .clipped()
+        Text("Cat").font(.title)
+        
+        Image("dog")
+          .resizable().scaledToFill()
+          .frame(width: 80, height: 80)
+          .clipped()
+        Text("Dog").font(.title)
+      }
     }
   }
 }

@@ -14,7 +14,7 @@ struct Ch05_2_Alert_ActionSheet: View {
   }
 }
 
-extension Ch05_2_Alert_ActionSheet {
+private extension Ch05_2_Alert_ActionSheet {
   // MARK: Example 01
   
   /// Alert 출력 예시
@@ -66,7 +66,7 @@ extension Ch05_2_Alert_ActionSheet {
 
 // MARK: - Previews
 
-struct Ch05_2_Alert_ActionSheet_Previews1: PreviewProvider {
+struct Ch05_2_Alert_ActionSheet_Previews: PreviewProvider {
   static var previews: some View {
     Ch05_2_Alert_ActionSheet()
       .previewDisplayName("Sweet SwiftUI")

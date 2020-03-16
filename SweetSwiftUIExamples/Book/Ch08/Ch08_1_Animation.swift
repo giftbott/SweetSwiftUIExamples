@@ -14,7 +14,7 @@ struct Ch08_1_Animation: View {
   }
 }
 
-extension Ch08_1_Animation {
+private extension Ch08_1_Animation {
   // MARK: Example 01
   
   /// .animation 수식어를 이용해 애니메이션 효과를 줄 수 있습니다.
@@ -105,7 +105,7 @@ extension Ch08_1_Animation {
 
 // MARK: - Previews
 
-struct Ch08_1_Animation_Previews1: PreviewProvider {
+struct Ch08_1_Animation_Previews: PreviewProvider {
   static var previews: some View {
     Ch08_1_Animation()
       .previewDisplayName("Sweet SwiftUI")

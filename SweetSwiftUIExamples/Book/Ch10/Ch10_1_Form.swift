@@ -14,7 +14,7 @@ struct Ch10_1_Form: View {
   }
 }
 
-extension Ch10_1_Form {
+private extension Ch10_1_Form {
   // MARK: Example 01
   
   /// 폼은 데이터 입력에 사용되는 다양한 컨트롤을 섹션을 이용해 그룹화하여 표현하기 위한 컨테이너 뷰입니다.
@@ -57,28 +57,30 @@ extension Ch10_1_Form {
   // MARK: Example 02
   
   /// 폼에서 여러 가지 뷰와 컨트롤이 어떤 식으로 표현되는지 확인해 보세요.
-  var example02: some View {
-    NavigationView {
-      Form {
-        Section(header: Text("뷰").font(.headline)) {
-          Text("텍스트")
-          Image(systemName: "gear").font(.title)
-          Rectangle()
-          Color.gray
+  struct Example02: View {
+    var body: some View {
+      NavigationView {
+        Form {
+          Section(header: Text("뷰").font(.headline)) {
+            Text("텍스트")
+            Image(systemName: "gear").font(.title)
+            Rectangle()
+            Color.gray
+          }
+          Section(header: Text("컨트롤").font(.headline)) {
+            Button("버튼") {}
+            TextField("플레이스 홀더", text: .constant("텍스트필드"))
+              .textFieldStyle(RoundedBorderTextFieldStyle())
+            SecureField("플레이스 홀더", text: .constant("시큐어필드"))
+            Slider(value: .constant(0.5))
+            Toggle("토글", isOn: .constant(true))
+            Stepper("스텝퍼", onIncrement: {}, onDecrement: {})
+            Picker("피커", selection: .constant("옵션")) { Text("옵션").tag("옵션") }
+            DatePicker(selection: .constant(Date())) { Text("DatePicker") }
+          }
         }
-        Section(header: Text("컨트롤").font(.headline)) {
-          Button("버튼") {}
-          TextField("플레이스 홀더", text: .constant("텍스트필드"))
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-          SecureField("플레이스 홀더", text: .constant("시큐어필드"))
-          Slider(value: .constant(0.5))
-          Toggle("토글", isOn: .constant(true))
-          Stepper("스텝퍼", onIncrement: {}, onDecrement: {})
-          Picker("피커", selection: .constant("옵션")) { Text("옵션").tag("옵션") }
-          DatePicker(selection: .constant(Date())) { Text("DatePicker") }
-        }
+        .navigationBarTitle("폼 - 뷰 & 컨트롤")
       }
-      .navigationBarTitle("폼 - 뷰 & 컨트롤")
     }
   }
 }
@@ -86,7 +88,7 @@ extension Ch10_1_Form {
 
 // MARK: - Previews
 
-struct Ch10_1_Form_Previews1: PreviewProvider {
+struct Ch10_1_Form_Previews: PreviewProvider {
   static var previews: some View {
     Ch10_1_Form()
       .previewDisplayName("Sweet SwiftUI")

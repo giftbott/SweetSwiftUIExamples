@@ -15,7 +15,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = scene as? UIWindowScene else { return }
 
-    let rootView = Ch01_HelloWorld()
+    let rootView = Ch01_HelloSwiftUI()
     
     window = UIWindow(windowScene: windowScene)
     window?.rootViewController = UIHostingController(rootView: rootView)

@@ -14,7 +14,7 @@ struct Ch11_1_UIViewControllerRepresentable: View {
   }
 }
 
-extension Ch11_1_UIViewControllerRepresentable {
+private extension Ch11_1_UIViewControllerRepresentable {
   // MARK: Example 01
   
   /// UIViewControllerRepresentable 프로토콜을 이용한
@@ -42,7 +42,8 @@ extension Ch11_1_UIViewControllerRepresentable {
   }
 }
 
-struct ImagePickerView: UIViewControllerRepresentable {
+
+fileprivate struct ImagePickerView: UIViewControllerRepresentable {
   @Binding var pickedImage: Image
 
   func makeUIViewController(context: Context) -> UIImagePickerController {
@@ -88,7 +89,7 @@ extension ImagePickerView.Coordinator: UIImagePickerControllerDelegate, UINaviga
 
 // MARK: - Previews
 
-struct Ch11_1_UIViewControllerRepresentable_Previews1: PreviewProvider {
+struct Ch11_1_UIViewControllerRepresentable_Previews: PreviewProvider {
   static var previews: some View {
     Ch11_1_UIViewControllerRepresentable()
       .previewDisplayName("Sweet SwiftUI")

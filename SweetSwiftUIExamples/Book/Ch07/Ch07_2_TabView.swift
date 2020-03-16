@@ -14,7 +14,7 @@ struct Ch07_2_TabView: View {
   }
 }
 
-extension Ch07_2_TabView {
+private extension Ch07_2_TabView {
   // MARK: Example 01
   
   /// 기본적인 탭 뷰에 대한 구현 예시
@@ -135,7 +135,7 @@ extension Ch07_2_TabView {
 
 // MARK: - Previews
 
-struct Ch07_2_TabView_Previews1: PreviewProvider {
+struct Ch07_2_TabView_Previews: PreviewProvider {
   static var previews: some View {
     Ch07_2_TabView()
       .previewDisplayName("Sweet SwiftUI")

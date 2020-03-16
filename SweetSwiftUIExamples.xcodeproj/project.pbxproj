@@ -34,7 +34,7 @@
 		5238EB50240D9FB40079E99D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5238EB4F240D9FB40079E99D /* Preview Assets.xcassets */; };
 		5238EB53240D9FB40079E99D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5238EB51240D9FB40079E99D /* LaunchScreen.storyboard */; };
 		5238EB71240DA2DF0079E99D /* Ch02_2_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5238EB70240DA2DF0079E99D /* Ch02_2_Text.swift */; };
-		5283F8A7240DAE9500813AA5 /* Ch01_HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283F8A6240DAE9500813AA5 /* Ch01_HelloWorld.swift */; };
+		5283F8A7240DAE9500813AA5 /* Ch01_HelloSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283F8A6240DAE9500813AA5 /* Ch01_HelloSwiftUI.swift */; };
 		5283F8A9240DC6EC00813AA5 /* Ch02_3_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283F8A8240DC6EC00813AA5 /* Ch02_3_Image.swift */; };
 		5283F8AB240DC8AC00813AA5 /* Ch02_4_ViewLayout_Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283F8AA240DC8AC00813AA5 /* Ch02_4_ViewLayout_Stack.swift */; };
 		52C000F3240EEFBD00E3D6AC /* Ch02_4_ViewLayout_Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C000F2240EEFBD00E3D6AC /* Ch02_4_ViewLayout_Spacer.swift */; };
@@ -76,7 +76,7 @@
 		5238EB52240D9FB40079E99D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5238EB54240D9FB40079E99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5238EB70240DA2DF0079E99D /* Ch02_2_Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ch02_2_Text.swift; sourceTree = "<group>"; };
-		5283F8A6240DAE9500813AA5 /* Ch01_HelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ch01_HelloWorld.swift; sourceTree = "<group>"; };
+		5283F8A6240DAE9500813AA5 /* Ch01_HelloSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ch01_HelloSwiftUI.swift; sourceTree = "<group>"; };
 		5283F8A8240DC6EC00813AA5 /* Ch02_3_Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ch02_3_Image.swift; sourceTree = "<group>"; };
 		5283F8AA240DC8AC00813AA5 /* Ch02_4_ViewLayout_Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ch02_4_ViewLayout_Stack.swift; sourceTree = "<group>"; };
 		52C000F2240EEFBD00E3D6AC /* Ch02_4_ViewLayout_Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ch02_4_ViewLayout_Spacer.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		5238EB5E240DA0FA0079E99D /* Ch01 */ = {
 			isa = PBXGroup;
 			children = (
-				5283F8A6240DAE9500813AA5 /* Ch01_HelloWorld.swift */,
+				5283F8A6240DAE9500813AA5 /* Ch01_HelloSwiftUI.swift */,
 			);
 			path = Ch01;
 			sourceTree = "<group>";
@@ -382,7 +382,7 @@
 				52C000F3240EEFBD00E3D6AC /* Ch02_4_ViewLayout_Spacer.swift in Sources */,
 				521B8314241151760098B353 /* Ch09_2_ContextMenu.swift in Sources */,
 				521B8306241151180098B353 /* Ch06_3_UIAppearance.swift in Sources */,
-				5283F8A7240DAE9500813AA5 /* Ch01_HelloWorld.swift in Sources */,
+				5283F8A7240DAE9500813AA5 /* Ch01_HelloSwiftUI.swift in Sources */,
 				5238EB71240DA2DF0079E99D /* Ch02_2_Text.swift in Sources */,
 				521B83162411517E0098B353 /* Ch10_1_Form.swift in Sources */,
 			);
@@ -525,6 +525,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SweetSwiftUIExamples/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +546,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SweetSwiftUIExamples/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

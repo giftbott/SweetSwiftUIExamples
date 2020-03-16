@@ -14,7 +14,7 @@ struct Ch08_2_Transition: View {
   }
 }
 
-extension Ch08_2_Transition {
+private extension Ch08_2_Transition {
   // MARK: Example 01
   
   /// 트랜지션은 뷰 계층 구조에 변화가 발생될 때 일어나는 애니메이션입니다.
@@ -162,7 +162,7 @@ extension Ch08_2_Transition {
 }
 
 
-extension AnyTransition {
+fileprivate extension AnyTransition {
   static var customScale: AnyTransition {
     AnyTransition.modifier(
       active: CustomScaleModifier(scale: 0),
@@ -171,7 +171,7 @@ extension AnyTransition {
   }
 }
 
-struct CustomScaleModifier: ViewModifier {
+fileprivate struct CustomScaleModifier: ViewModifier {
   let scale: CGFloat
   func body(content: Content) -> some View {
     content
@@ -182,7 +182,7 @@ struct CustomScaleModifier: ViewModifier {
 
 // MARK: - Previews
 
-struct Ch08_2_Transition_Previews1: PreviewProvider {
+struct Ch08_2_Transition_Previews: PreviewProvider {
   static var previews: some View {
     Ch08_2_Transition()
       .previewDisplayName("Sweet SwiftUI")

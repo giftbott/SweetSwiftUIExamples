@@ -10,23 +10,25 @@ import SwiftUI
 
 struct Ch06_2_CustomStyle: View {
   var body: some View {
-    example01
+    Example01()
   }
 }
 
-extension Ch06_2_CustomStyle {  
+private extension Ch06_2_CustomStyle {  
   // MARK: Example 01
   
   /// ButtonStyle은 버튼의 눌림 상태에 따라 버튼 외형을 정의하기 위한 프로토콜입니다.
-  var example01: some View {
-    VStack(spacing: 20) {
-      Button("기본 버튼 스타일") { print("기본 버튼") }
-      
-      Button("커스텀 버튼 스타일1") { print("커스텀 버튼1") }
-        .buttonStyle(CustomButtonStyle(backgroundColor: .green))
-      
-      Button("커스텀 버튼 스타일2") { print("커스텀 버튼2") }
-        .buttonStyle(CustomButtonStyle(cornerRadius: 20))
+  struct Example01: View {
+    var body: some View {
+      VStack(spacing: 20) {
+        Button("기본 버튼 스타일") { print("기본 버튼") }
+        
+        Button("커스텀 버튼 스타일1") { print("커스텀 버튼1") }
+          .buttonStyle(CustomButtonStyle(backgroundColor: .green))
+        
+        Button("커스텀 버튼 스타일2") { print("커스텀 버튼2") }
+          .buttonStyle(CustomButtonStyle(cornerRadius: 20))
+      }
     }
   }
 
@@ -52,15 +54,17 @@ extension Ch06_2_CustomStyle {
   // MARK: Example02
   
   /// PrimitiveButtonStyle은 버튼 이벤트의 발생 조건과 시점을 제어할 때 사용하는 프로토콜입니다.
-  var example02: some View {
-    VStack(spacing: 20) {
-      Button("기본 버튼 스타일") { print("기본 버튼") }
-      
-      Button("커스텀 버튼 스타일1") { print("커스텀 버튼1") }
-        .buttonStyle(CustomPrimitiveButtonStyle())
-      
-      Button("커스텀 버튼 스타일2") { print("커스텀 버튼2") }
-        .buttonStyle(CustomPrimitiveButtonStyle(minimumDuration: 1))
+  struct Example02: View {
+    var body: some View {
+      VStack(spacing: 20) {
+        Button("기본 버튼 스타일") { print("기본 버튼") }
+        
+        Button("커스텀 버튼 스타일1") { print("커스텀 버튼1") }
+          .buttonStyle(CustomPrimitiveButtonStyle())
+        
+        Button("커스텀 버튼 스타일2") { print("커스텀 버튼2") }
+          .buttonStyle(CustomPrimitiveButtonStyle(minimumDuration: 1))
+      }
     }
   }
   
@@ -151,7 +155,7 @@ extension Ch06_2_CustomStyle {
 
 // MARK: - Previews
 
-struct Ch06_2_CustomStyle_Previews1: PreviewProvider {
+struct Ch06_2_CustomStyle_Previews: PreviewProvider {
   static var previews: some View {
     Ch06_2_CustomStyle()
       .previewDisplayName("Sweet SwiftUI")

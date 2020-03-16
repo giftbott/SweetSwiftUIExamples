@@ -14,7 +14,7 @@ struct Ch09_2_ContextMenu: View {
   }
 }
 
-extension Ch09_2_ContextMenu {
+private extension Ch09_2_ContextMenu {
   // MARK: Example 01
   
   /// 컨텍스트 메뉴 활용 예시
@@ -129,7 +129,7 @@ extension Ch09_2_ContextMenu {
 
 // MARK: - Previews
 
-struct Ch09_2_ContextMenu_Previews1: PreviewProvider {
+struct Ch09_2_ContextMenu_Previews: PreviewProvider {
   static var previews: some View {
     Ch09_2_ContextMenu()
       .previewDisplayName("Sweet SwiftUI")

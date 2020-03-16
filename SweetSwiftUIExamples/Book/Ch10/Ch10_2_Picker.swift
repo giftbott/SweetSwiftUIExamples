@@ -14,7 +14,7 @@ struct Ch10_2_Picker: View {
   }
 }
 
-extension Ch10_2_Picker {
+private extension Ch10_2_Picker {
   // MARK: Example 01
   
   /// 피커는 다양한 선택지 중에서 하나의 값을 선택해야 할 때 사용하는 컨트롤이며,
@@ -66,22 +66,26 @@ extension Ch10_2_Picker {
   // MARK: Example 03
   
   /// labelsHidden 수식어를 이용해 피커의 레이블을 숨길 수 있습니다.
-  var example03: some View {
-    Example02()
-      .background(RoundedRectangle(cornerRadius: 12)
-        .stroke(Color.blue, lineWidth: 1))
-      .labelsHidden()
+  struct Example03: View {
+    var body: some View {
+      Example02()
+        .background(RoundedRectangle(cornerRadius: 12)
+          .stroke(Color.blue, lineWidth: 1))
+        .labelsHidden()
+    }
   }
   
   // MARK: Example 04
   
   /// SegmentedPickerStyle을 지정하면 UISegmentedControl 클래스가 사용됩니다.
-  var example04: some View {
-    Example02()
-      .pickerStyle(SegmentedPickerStyle())
-//      .onAppear {
-//        UISegmentedControl.appearance().selectedSegmentTintColor = .systemRed
-//      }
+  struct Example04: View {
+    var body: some View {
+      Example02()
+        .pickerStyle(SegmentedPickerStyle())
+//        .onAppear {
+//          UISegmentedControl.appearance().selectedSegmentTintColor = .systemRed
+//        }
+    }
   }
   
   
@@ -101,10 +105,12 @@ extension Ch10_2_Picker {
   // MARK: Example 05
   
   /// 폼에서는 피커가 다른 스타일로 동작하게 됩니다.
-  var example05: some View {
-    NavigationView {
-      Form {
-        PickerInForm()
+  struct Example05: View {
+    var body: some View {
+      NavigationView {
+        Form {
+          PickerInForm()
+        }
       }
     }
   }
@@ -112,16 +118,18 @@ extension Ch10_2_Picker {
   // MARK: Example 06
   
   /// 각 스타일에 따라 피커가 폼에서 어떻게 보이는지 확인해 보세요.
-  var example06: some View {
-    NavigationView {
-      Form {
-        PickerInForm()
-        PickerInForm()
-          .pickerStyle(WheelPickerStyle())
-        PickerInForm()
-          .pickerStyle(SegmentedPickerStyle())
+  struct Example06: View {
+    var body: some View {
+      NavigationView {
+        Form {
+          PickerInForm()
+          PickerInForm()
+            .pickerStyle(WheelPickerStyle())
+          PickerInForm()
+            .pickerStyle(SegmentedPickerStyle())
+        }
+        .navigationBarTitle("폼 - 피커 스타일")
       }
-      .navigationBarTitle("폼 - 피커 스타일")
     }
   }
 }
@@ -129,7 +137,7 @@ extension Ch10_2_Picker {
 
 // MARK: - Previews
 
-struct Ch10_2_Picker_Previews1: PreviewProvider {
+struct Ch10_2_Picker_Previews: PreviewProvider {
   static var previews: some View {
     Ch10_2_Picker()
       .previewDisplayName("Sweet SwiftUI")
