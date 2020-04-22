@@ -98,8 +98,8 @@ private extension Ch03_5_FrameModifier {
     var body: some View {
       VStack {
         Text("Frame Modifier").font(.title).bold()
-          .frame(width: 80, height: 30)
           .fixedSize()
+          .frame(width: 80, height: 30)
         Rectangle()
 //          .frame(idealWidth: 100)
           .fixedSize()
