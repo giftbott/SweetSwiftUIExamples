@@ -24,6 +24,11 @@ private extension Ch01_HelloSwiftUI {
         .foregroundColor(.red)
         .fontWeight(.bold)
         .colorInvert()
+      /*
+       [ 유의할 점 ]
+       SwiftUI 버그로 인해 .colorInvert 수식어 적용 시 프리뷰 오류가 발생할 수 있습니다.
+       시뮬레이터 또는 Xcode 12 이후의 프리뷰에서는 정상 동작합니다.
+       */
     }
   }
 
