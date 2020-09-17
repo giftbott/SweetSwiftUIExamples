@@ -19,6 +19,7 @@ private extension Ch10_2_Picker {
   
   /// 피커는 다양한 선택지 중에서 하나의 값을 선택해야 할 때 사용하는 컨트롤이며,
   /// iOS에서 단독으로 피커를 사용했을 때는 기본 스타일로 WheelPickerStyle이 사용됩니다.
+  /// => iOS 14.0부터는 iOS에서 피커 제목이 나타나지 않습니다.
   struct Example01: View {
     @State private var selection = 2
     
@@ -66,9 +67,10 @@ private extension Ch10_2_Picker {
   // MARK: Example 03
   
   /// labelsHidden 수식어를 이용해 피커의 레이블을 숨길 수 있습니다.
+  /// => iOS 14.0에서는 이 수식어를 사용하지 않아도 무방합니다.
   struct Example03: View {
     var body: some View {
-      Example02()
+      Ch10_2_Picker.Example02()
         .background(RoundedRectangle(cornerRadius: 12)
           .stroke(Color.blue, lineWidth: 1))
         .labelsHidden()
@@ -80,7 +82,7 @@ private extension Ch10_2_Picker {
   /// SegmentedPickerStyle을 지정하면 UISegmentedControl 클래스가 사용됩니다.
   struct Example04: View {
     var body: some View {
-      Example02()
+      Ch10_2_Picker.Example02()
         .pickerStyle(SegmentedPickerStyle())
 //        .onAppear {
 //          UISegmentedControl.appearance().selectedSegmentTintColor = .systemRed
@@ -109,7 +111,7 @@ private extension Ch10_2_Picker {
     var body: some View {
       NavigationView {
         Form {
-          PickerInForm()
+          Ch10_2_Picker.PickerInForm()
         }
       }
     }
@@ -122,10 +124,10 @@ private extension Ch10_2_Picker {
     var body: some View {
       NavigationView {
         Form {
-          PickerInForm()
-          PickerInForm()
+          Ch10_2_Picker.PickerInForm()
+          Ch10_2_Picker.PickerInForm()
             .pickerStyle(WheelPickerStyle())
-          PickerInForm()
+          Ch10_2_Picker.PickerInForm()
             .pickerStyle(SegmentedPickerStyle())
         }
         .navigationBarTitle("폼 - 피커 스타일")

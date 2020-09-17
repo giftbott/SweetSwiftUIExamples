@@ -10,8 +10,8 @@ import SwiftUI
 
 struct Ch11_3_PreviewInUIKit: View {
   var body: some View {
-    ViewController_Previews()
-//    MyView_Previews()
+//    ViewController_Previews()
+    MyView_Previews()
   }
 }
 

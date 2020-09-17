@@ -28,7 +28,7 @@ private extension Ch05_3_PresentationStyle {
       }
       .sheet(isPresented: $showingSheet,
              onDismiss: { print("Dismissed")},
-             content: { PresentedView() })
+             content: { Ch05_3_PresentationStyle.PresentedView() })
     }
   }
   
@@ -60,7 +60,9 @@ private extension Ch05_3_PresentationStyle {
       }
       .sheet(isPresented: $showingSheet,
              onDismiss: { print("Dismissed")},
-             content: { PresentedViewWithBinding(isPresented: self.$showingSheet) })
+             content: {
+              Ch05_3_PresentationStyle.PresentedViewWithBinding(isPresented: self.$showingSheet)
+             })
     }
   }
   

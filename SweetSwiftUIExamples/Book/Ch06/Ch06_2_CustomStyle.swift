@@ -24,10 +24,10 @@ private extension Ch06_2_CustomStyle {
         Button("기본 버튼 스타일") { print("기본 버튼") }
         
         Button("커스텀 버튼 스타일1") { print("커스텀 버튼1") }
-          .buttonStyle(CustomButtonStyle(backgroundColor: .green))
+          .buttonStyle(Ch06_2_CustomStyle.CustomButtonStyle(backgroundColor: .green))
         
         Button("커스텀 버튼 스타일2") { print("커스텀 버튼2") }
-          .buttonStyle(CustomButtonStyle(cornerRadius: 20))
+          .buttonStyle(Ch06_2_CustomStyle.CustomButtonStyle(cornerRadius: 20))
       }
     }
   }
@@ -60,10 +60,10 @@ private extension Ch06_2_CustomStyle {
         Button("기본 버튼 스타일") { print("기본 버튼") }
         
         Button("커스텀 버튼 스타일1") { print("커스텀 버튼1") }
-          .buttonStyle(CustomPrimitiveButtonStyle())
+          .buttonStyle(Ch06_2_CustomStyle.CustomPrimitiveButtonStyle())
         
         Button("커스텀 버튼 스타일2") { print("커스텀 버튼2") }
-          .buttonStyle(CustomPrimitiveButtonStyle(minimumDuration: 1))
+          .buttonStyle(Ch06_2_CustomStyle.CustomPrimitiveButtonStyle(minimumDuration: 1))
       }
     }
   }
@@ -72,34 +72,22 @@ private extension Ch06_2_CustomStyle {
 
   struct CustomPrimitiveButtonStyle: PrimitiveButtonStyle {
     var minimumDuration = 0.5
+    @GestureState private var isPressed = false
     
     func makeBody(configuration: Configuration) -> some View {
-      ButtonStyleBody(configuration: configuration,
-                      minimumDuration: minimumDuration)
-    }
-    
-    private struct ButtonStyleBody: View {
-      let configuration: Configuration
-      let minimumDuration: Double
-      @GestureState private var isPressed = false
-      
-      var body: some View {
-        let longPress = LongPressGesture(minimumDuration: minimumDuration)
-          .updating($isPressed) { value, state, _ in
-            state = value
-          }
-        .onEnded { _ in
-          self.configuration.trigger()
+      let longPress = LongPressGesture(minimumDuration: minimumDuration)
+        .updating($isPressed) { value, state, _ in
+          state = value
+        }.onEnded { _ in
+          configuration.trigger()
         }
-        
-        return configuration.label
-          .foregroundColor(.white)
-          .padding()
-          .background(RoundedRectangle(cornerRadius: 10).fill(Color.green))
-          .scaleEffect(isPressed ? 0.8 : 1.0)
-          .opacity(isPressed ? 0.6 : 1.0)
-          .gesture(longPress)
-      }
+      return configuration.label
+        .foregroundColor(.white)
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 10).fill(Color.green))
+        .scaleEffect(isPressed ? 0.8 : 1.0)
+        .opacity(isPressed ? 0.6 : 1.0)
+        .gesture(longPress)
     }
   }
   
@@ -115,7 +103,7 @@ private extension Ch06_2_CustomStyle {
         Toggle("기본 토글", isOn: $isOn)
         
         Toggle("커스텀 토글", isOn: $isOn)
-          .toggleStyle(CustomToggleStyle())
+          .toggleStyle(Ch06_2_CustomStyle.CustomToggleStyle())
         Image(systemName: "ADFS")
       }
       .font(.headline)

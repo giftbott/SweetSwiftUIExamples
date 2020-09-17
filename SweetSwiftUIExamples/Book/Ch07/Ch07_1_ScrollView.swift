@@ -182,7 +182,7 @@ private extension Ch07_1_ScrollView {
   
   // MARK: Example 07
   
-  /// 지오메트리 리더를 이용해 스크롤뷰의 ContentOffset 정보를 계산할 수 있습니다.
+  /// 스크롤뷰의 페이징은 직접 구현하거나 UIScrollView의 외형 프록시를 이용해 구현 가능합니다.
   struct Example07: View {
     var body: some View {
       let colors: [Color] = [.red, .green, .blue]

@@ -59,6 +59,7 @@ private extension Ch07_2_TabView {
   // MARK: Example 02
   
   /// 탭 아이템은 어느 뷰에 연결했는 지와 관계없이 뷰를 작성한 순서대로 적용됩니다.
+  /// => iOS 14.0부터는 탭 아이템 수식어를 적용한 뷰에 제대로 연결됩니다.
   struct Example02: View {
     var body: some View {
       TabView {

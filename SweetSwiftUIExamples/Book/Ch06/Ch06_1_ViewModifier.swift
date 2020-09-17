@@ -21,10 +21,10 @@ private extension Ch06_1_ViewModifier {
   struct Example01: View {
     var body: some View {
       Text("Custom ViewModifier")
-        .modifier(CustomViewModifier(borderColor: .blue))
+        .modifier(Ch06_1_ViewModifier.CustomViewModifier(borderColor: .blue))
       
 //      ModifiedContent(content: Text("Custom ViewModifier"),
-//                      modifier: CustomViewModifier(borderColor: .blue))
+//                      modifier: Ch06_1_ViewModifier.CustomViewModifier(borderColor: .blue))
     }
   }
   

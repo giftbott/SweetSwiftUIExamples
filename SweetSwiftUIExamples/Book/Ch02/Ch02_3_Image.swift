@@ -71,7 +71,7 @@ private extension Ch02_3_Image {
           .scaledToFit()
           .frame(width: 100, height: 150)
         
-        Image("Sw1iftUI").resizable()
+        Image("SwiftUI").resizable()
           .scaledToFill()
           .frame(width: 100, height: 150)
           .clipped()

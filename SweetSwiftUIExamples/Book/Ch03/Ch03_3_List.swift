@@ -14,7 +14,7 @@ struct Ch03_3_List: View {
   }
 }
 
-private extension Ch03_3_List {  
+private extension Ch03_3_List {
   // MARK: Example 01
   
   /// List를 이용한 뷰 표현. 여기서 뷰 하나는 로우 하나에 해당합니다.
@@ -147,6 +147,7 @@ private extension Ch03_3_List {
   // MARK: Example 08
   
   /// iOS에서는 리스트에 Default, Plain, Grouped 3가지 스타일을 제공합니다.
+  /// => iOS 14.0에서 Inset, InsetGrouped, Sidebar 스타일이 추가되었습니다.
   struct Example08: View {
     let fruits = ["사과", "배", "포도", "바나나"]
     let drinks = ["물", "우유", "탄산수"]
@@ -173,11 +174,11 @@ private extension Ch03_3_List {
   
   // MARK: Example 09
   
-  /// GroupedListStyle일 때 사이즈 클래스가 Regular width이면
-  /// insetGrouped 스타일이 적용됩니다.
+  /// GroupedListStyle일 때 사이즈 클래스가 Regular width이면 insetGrouped 스타일이 적용됩니다.
+  /// => iOS 14.0부터는 insetGrouped 스타일이 따로 추가되었으므로 스타일이 변경되지 않습니다.
   struct Example09: View {
     var body: some View {
-      Example08()
+      Ch03_3_List.Example08()
         .environment(\.horizontalSizeClass, .regular)
     }
   }

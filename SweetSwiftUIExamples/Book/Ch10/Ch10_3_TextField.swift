@@ -35,6 +35,7 @@ private extension Ch10_3_TextField {
   // MARK: Example 02
   
   /// bezel 또는 line 스타일 적용 예시
+  /// => iOS 14.0에서는 적용되지 않습니다.
   struct Example02: View {
     var body: some View {
       Form {
@@ -94,7 +95,7 @@ private extension Ch10_3_TextField {
       nameFormatter.style = .short
       
       let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "YYYY.MM.DD"
+      dateFormatter.dateFormat = "yyyy.MM.dd"
       
       let numberFormatter = NumberFormatter()
       numberFormatter.numberStyle = .percent

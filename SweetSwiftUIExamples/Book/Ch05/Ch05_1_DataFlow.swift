@@ -53,8 +53,9 @@ private extension Ch05_1_DataFlow {
   
   /// ObservableObject 프로토콜을 채택한 모델을 다룰 때
   /// ObservedObject를 사용할 수 있습니다.
+  /// => iOS 14.0부터 @StateObject가 추가되었습니다.
   struct Example02: View {
-    @ObservedObject var user = User()
+    @ObservedObject var user = Ch05_1_DataFlow.User()
     
     var body: some View {
       VStack(spacing: 30) {
@@ -74,12 +75,12 @@ private extension Ch05_1_DataFlow {
   /// EnvironmentObject를 이용하면 뷰의 서브 트리 전체가 동일한 데이터를 공유할 수 있습니다.
   struct Example03: View {
     var body: some View {
-      Superview()
-        .environmentObject(User())
+      Ch05_1_DataFlow.Superview()
+        .environmentObject(Ch05_1_DataFlow.User())
     }
   }
   struct Superview: View {
-    var body: some View { Subview() }
+    var body: some View { Ch05_1_DataFlow.Subview() }
   }
   struct Subview: View {
     @EnvironmentObject var user: User

@@ -32,7 +32,7 @@ private extension Ch08_1_Animation {
         .onTapGesture {
           self.blur.toggle()
           self.reduction.toggle()
-      }
+        }
     }
   }
 
@@ -55,7 +55,7 @@ private extension Ch08_1_Animation {
         .onTapGesture {
           self.blur.toggle()
           self.reduction.toggle()
-      }
+        }
     }
   }
 
@@ -76,7 +76,7 @@ private extension Ch08_1_Animation {
             self.blur.toggle()
           }
           self.reduction.toggle()
-      }
+        }
     }
   }
   
@@ -97,7 +97,7 @@ private extension Ch08_1_Animation {
         .onTapGesture {
           self.blur.toggle()
           self.reduction.toggle()
-      }
+        }
     }
   }
 }

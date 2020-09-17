@@ -22,10 +22,10 @@ private extension Ch03_2_NavigationView {
     var body: some View {
       NavigationView {
         Image("SwiftUI")
-        .navigationBarTitle("내비게이션 바 타이틀")
-//        .navigationBarTitle("내비게이션 바 타이틀", displayMode: .automatic)
-//        .navigationBarTitle("내비게이션 바 타이틀", displayMode: .large)
-//        .navigationBarTitle("내비게이션 바 타이틀", displayMode: .inline)
+          .navigationBarTitle("내비게이션 바 타이틀")
+//          .navigationBarTitle("내비게이션 바 타이틀", displayMode: .automatic)
+//          .navigationBarTitle("내비게이션 바 타이틀", displayMode: .large)
+//          .navigationBarTitle("내비게이션 바 타이틀", displayMode: .inline)
       }
     }
   }
@@ -82,6 +82,7 @@ private extension Ch03_2_NavigationView {
   
   /// 내비게이션 링크에서 이미지의 렌더링 모드를 변경하는 방법은
   /// 직접 이미지에서 renderingMode 수식어를 사용하거나 PlainButtonStyle을 적용하는 방법이 있습니다.
+  /// => iOS 14.0부터 렌더링 모드 기본값이 template에서 original로 변경
   struct Example04: View {
     var body: some View {
       NavigationView {
@@ -115,7 +116,7 @@ private extension Ch03_2_NavigationView {
   /// (뒤로 가기 버튼 수동 구현 예시 포함. Environment에 대해서는 이후에 다루게 됩니다.)
   struct Example06: View {
     var body: some View {
-      return NavigationView {
+      NavigationView {
         NavigationLink(destination: DestinationView()) {
           Image("SwiftUI").renderingMode(.original)
         }

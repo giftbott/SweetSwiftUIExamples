@@ -19,6 +19,7 @@ private extension Ch10_1_Form {
   
   /// 폼은 데이터 입력에 사용되는 다양한 컨트롤을 섹션을 이용해 그룹화하여 표현하기 위한 컨테이너 뷰입니다.
   /// 내부적으로는 리스트가 사용됩니다.
+  /// => 14.0부터는 InsetGroupedListStyle이 기본값으로 적용됩니다.
   struct Example01: View {
     @State private var brightness: CGFloat = 0.5
     @State private var isTrueTone = true

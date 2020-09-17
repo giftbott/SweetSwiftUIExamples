@@ -21,7 +21,8 @@ private extension Ch04_2_EnvironmentValues {
   /// 수식어가 적용된 뷰와 그 서브 트리에 일괄 반영됩니다.
   struct Example01: View {
     var body: some View {
-      Text("Hello, SwiftUI").frame(width: 100)
+      Text("Hello, SwiftUI")
+        .frame(width: 100)
         .environment(\.font, .title)
         .environment(\.lineLimit, 1)
         .environment(\.minimumScaleFactor, 0.5)
@@ -48,7 +49,7 @@ private extension Ch04_2_EnvironmentValues {
   /// EnvironmentKey를 이용해 커스텀 환경 변수를 정의할 수도 있습니다.
   struct Example03: View {
     var body: some View {
-      MySubview()
+      Ch04_2_EnvironmentValues.MySubview()
         .environment(\.myEnvironment, 10)
     }
   }

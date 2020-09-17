@@ -43,6 +43,7 @@ private extension Ch03_1_Button {
   // MARK: Example 02
   
   /// 버튼에서 이미지를 사용하면 기본 렌더링 모드가 template으로 적용됩니다.
+  /// => iOS 14.0부터 렌더링 모드 기본값이 template에서 original로 변경
   
   struct Example02: View {
     var body: some View {
