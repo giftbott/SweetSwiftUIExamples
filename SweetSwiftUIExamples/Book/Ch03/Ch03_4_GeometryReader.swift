@@ -51,8 +51,7 @@ private extension Ch03_4_GeometryReader {
   // MARK: Example 03
   
   /// 지오메트리 프락시를 통해 부모 뷰의 크기와 안전 영역에 대한 정보를 얻을 수 있습니다.
-  /// => Xcode 11.x 에서는 그 버전에 따라 프리뷰와 시뮬레이터가 safeAreaInsets를 인식하는 기준이 다릅니다.
-  /// Xcode 12부터는 프리뷰와 시뮬레이터 모두 GeometryReader가 직접 안전 영역에 맞닿은 면에 한해 그 크기를 가져옵니다.
+  /// => iOS 14부터는 GeometryReader가 직접 안전 영역에 맞닿은 면에 한해 그 크기를 가져옵니다.
   /// 즉, top은 다른 뷰에 접해있고 bottom만 안전 영역에 닿아 있다면 top은 0이고 bottom만 알맞은 값을 가집니다.
   struct Example03: View {
     var body: some View {
